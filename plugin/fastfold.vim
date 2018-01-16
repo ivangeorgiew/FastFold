@@ -209,7 +209,7 @@ function! s:init()
           \ else                          | call s:UpdateBuf(0) | endif
     " Update folds on saving.
     if g:fastfold_savehook
-      autocmd BufWritePost                * call s:UpdateBuf(0)
+      autocmd BufWritePost                * call s:UpdateBuf(0) | normal! zv
     endif
     if g:fastfold_fdmhook
       if exists('##OptionSet')
